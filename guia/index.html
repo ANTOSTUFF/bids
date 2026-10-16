@@ -240,7 +240,7 @@
           <li><a href="#valor"><b>Ingeniería de valor</b><span>Propuestas de ahorro</span></a></li>
           <li><a href="#adendas"><b>Adendas</b><span>Cambios a los documentos</span></a></li>
           <li><a href="#documentos"><b>Documentos</b><span>Códigos y revisiones</span></a></li>
-          <li><a href="#ofertas"><b>Ofertas</b><span>El sobre cerrado</span></a></li>
+          <li><a href="#ofertas"><b>Ofertas</b><span>Solo en el portal</span></a></li>
           <li><a href="#legal"><b>Legal</b><span>El borrador del contrato</span></a></li>
           <li><a href="#plazos"><b>Plazos y avisos</b><span>Resumen</span></a></li>
         </ul>
@@ -254,7 +254,7 @@
           <li><p class="codigo">PM</p><h3>Project manager</h3><p class="desc">Coordina: invita a los usuarios, publica las respuestas, emite las adendas y aprueba las ofertas.</p></li>
           <li class="clave"><p class="codigo">SUPV</p><h3>Supervisor</h3><p class="desc">Punto de contacto de los licitantes. Filtra cada consulta, revisa respuestas y adendas, y verifica las ofertas.</p></li>
           <li><p class="codigo">PROY</p><h3>Proyectista</h3><p class="desc">El equipo de diseño. Responde las RFI técnicas, evalúa las propuestas de valor y prepara las adendas.</p></li>
-          <li><p class="codigo">LEGAL</p><h3>Asesoría legal</h3><p class="desc">Revisa con cada empresa su borrador de contrato.</p></li>
+          <li><p class="codigo">LEGAL</p><h3>Asesoría legal</h3><p class="desc">Revisa con cada empresa su borrador de contrato y consulta las ofertas.</p></li>
           <li><p class="codigo">GC</p><h3>Licitantes</h3><p class="desc">Las empresas invitadas: consultan los documentos, envían sus consultas y propuestas, y cargan su oferta.</p></li>
         </ul>
         <div class="regla"><span class="regla-tipo">REGLA</span><p class="regla-texto">Todos aceptan un compromiso de confidencialidad la primera vez que entran.</p></div>
@@ -354,15 +354,15 @@
 
       <section class="bloque" id="ofertas" data-titulo="Ofertas">
         <p class="eyebrow">Ofertas</p>
-        <h2>La oferta va en sobre cerrado: nadie del equipo ve su valor ni su PDF hasta la apertura.</h2>
-        <ol class="pasos" style="--n:4">
-          <li class="paso"><div class="paso-cabeza"><span class="num">1</span><p class="rol">Licitante</p></div><p class="verbo">Carga y activa</p><p class="plazo">—</p><p class="desc">Valor, plazo y PDF. Puede desactivarla y cargar otra antes de la apertura.</p></li>
-          <li class="paso clave"><div class="paso-cabeza"><span class="num">2</span><p class="rol">Portal</p></div><p class="verbo">Abre el sobre</p><p class="plazo">17:00</p><p class="desc">El día de entrega de ofertas.</p></li>
-          <li class="paso"><div class="paso-cabeza"><span class="num">3</span><p class="rol">Supervisor</p></div><p class="verbo">Verifica</p><p class="plazo">2 días</p><p class="desc">La pasa al PM, la devuelve para corregir o la rechaza.</p></li>
-          <li class="paso"><div class="paso-cabeza"><span class="num">4</span><p class="rol">PM</p></div><p class="verbo">Aprueba</p><p class="plazo">—</p><p class="desc">La aprobación final.</p></li>
+        <h2>La oferta se presenta solo en el portal: desde que el licitante la activa, la ven el supervisor, el PM, la propiedad y Legal.</h2>
+        <ol class="pasos" style="--n:3">
+          <li class="paso"><div class="paso-cabeza"><span class="num">1</span><p class="rol">Licitante</p></div><p class="verbo">Carga y activa</p><p class="plazo">—</p><p class="desc">Valor, plazo y PDF, según las especificaciones que entrega el PM. Puede desactivarla y cambiarla hasta la fecha de entrega.</p></li>
+          <li class="paso clave"><div class="paso-cabeza"><span class="num">2</span><p class="rol">Supervisor</p></div><p class="verbo">Verifica</p><p class="plazo">2 días</p><p class="desc">Desde la activación. La pasa al PM, la devuelve para corregir o la rechaza.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">3</span><p class="rol">PM</p></div><p class="verbo">Aprueba</p><p class="plazo">—</p><p class="desc">La aprobación final.</p></li>
         </ol>
+        <p class="linea"><b>FECHA DE ENTREGA</b>Hasta las 17:00 del día de entrega de ofertas. Después no se aceptan ofertas nuevas ni cambios, salvo las correcciones que pida el supervisor (PDF y notas).</p>
         <p class="linea"><b>DEVOLUCIONES</b>Supervisor → Licitante, para corregir la oferta.</p>
-        <div class="regla"><span class="regla-tipo">REGLA</span><p class="regla-texto">Antes de la apertura, el equipo solo sabe que una empresa tiene una oferta activa. Ninguna empresa ve la de otra.</p></div>
+        <div class="regla"><span class="regla-tipo">REGLA</span><p class="regla-texto">No se aceptan ofertas por correo ni en papel. Ninguna empresa ve la oferta de otra, y el proyectista no ve las ofertas.</p></div>
         <div class="nav-bloque" data-nav></div>
       </section>
 
@@ -394,7 +394,7 @@
             <tr><td>Responder una consulta comercial</td><td>PM</td><td>2 días</td></tr>
             <tr><td>Aclarar una propuesta de valor</td><td>Licitante</td><td>2 días</td></tr>
             <tr><td>Decidir una propuesta de valor</td><td>PM</td><td>2 días</td></tr>
-            <tr><td>Verificar una oferta, desde la apertura</td><td>Supervisor</td><td>2 días</td></tr>
+            <tr><td>Verificar una oferta, desde su activación</td><td>Supervisor</td><td>2 días</td></tr>
             <tr><td>Confirmar una adenda (recordatorio)</td><td>Licitante</td><td>2 días</td></tr>
           </tbody>
         </table>
