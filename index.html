@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Licitación Marina 5 · Sunspot Paradise Inc.</title>
+    <meta name="description" content="Portal de licitación del proyecto Marina 5 de Sunspot Paradise Inc. Acceso para las empresas invitadas y guía del portal.">
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/png" href="assets/logo-negro.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap">
+    <style>
+      :root {
+        --azul: #1F3A5F;
+        --azul-hondo: #162B47;
+        --azul-claro: #9DB8DA;
+        --naranja: #D9822B;
+        --fondo: #FBFBFA;
+        --tinta: #1F2A37;
+        --texto: #3D4A5C;
+        --suave: #5F6B7C;
+        --borde: #D9DFE7;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--fondo);
+        color: var(--tinta);
+        font-family: 'Roboto Condensed', Arial, sans-serif;
+        font-size: 18px;
+        line-height: 1.45;
+      }
+      .portada {
+        flex: 1;
+        background: linear-gradient(160deg, var(--azul) 0%, var(--azul-hondo) 100%);
+        color: #F4F6F9;
+        display: flex;
+        align-items: center;
+      }
+      .dentro { width: 100%; max-width: 1080px; margin: 0 auto; padding: 56px 24px; }
+      .logo { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+      .logo img { height: 56px; width: auto; }
+      .logo span { font-size: 15px; font-weight: 700; letter-spacing: 3px; color: var(--azul-claro); }
+      .eyebrow { margin: 0 0 12px; font-size: 16px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--azul-claro); }
+      h1 { margin: 0; font-size: 72px; line-height: 1.02; font-weight: 700; }
+      .raya { width: 120px; height: 5px; background: var(--naranja); margin: 28px 0; border-radius: 3px; }
+      .intro { margin: 0; max-width: 640px; font-size: 21px; color: #C9D6E6; }
+      .botones { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 40px; }
+      .boton {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 60px;
+        padding: 14px 28px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .boton:focus-visible { outline: 3px solid #F4F6F9; outline-offset: 3px; }
+      .principal { background: var(--naranja); color: #1B1205; }
+      .principal:hover { background: #E89548; }
+      .secundario { border: 2px solid rgba(244, 246, 249, 0.6); color: #F4F6F9; }
+      .secundario:hover { background: rgba(244, 246, 249, 0.1); }
+      .ayuda { margin: 14px 0 0; font-size: 16px; color: var(--azul-claro); }
+      .pasos { background: var(--fondo); }
+      .pasos ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+      .pasos li { background: #FFFFFF; border: 1px solid var(--borde); border-radius: 12px; padding: 22px; }
+      .num { display: inline-flex; width: 34px; height: 34px; border-radius: 50%; background: var(--azul); color: #F4F6F9; font-weight: 700; align-items: center; justify-content: center; }
+      .pasos h2 { margin: 12px 0 6px; font-size: 22px; color: var(--azul); }
+      .pasos p { margin: 0; font-size: 17px; color: var(--texto); }
+      .pasos a { color: var(--azul); font-weight: 700; }
+      footer { border-top: 1px solid var(--borde); }
+      footer .dentro { padding: 20px 24px; display: flex; gap: 12px; justify-content: space-between; flex-wrap: wrap; font-size: 15px; color: var(--suave); }
+      footer a { color: var(--suave); }
+      @media (max-width: 760px) {
+        .dentro { padding: 40px 20px; }
+        .logo { margin-bottom: 36px; }
+        h1 { font-size: 46px; }
+        .intro { font-size: 19px; }
+        .boton { width: 100%; }
+        .pasos ol { grid-template-columns: minmax(0, 1fr); }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="portada">
+      <div class="dentro">
+        <div class="logo">
+          <img src="assets/logo-blanco.png" alt="Sunspot Paradise">
+          <span>SUNSPOT PARADISE INC.</span>
+        </div>
+        <p class="eyebrow">Proceso de selección del contratista general</p>
+        <h1>Licitación<br>Marina 5</h1>
+        <div class="raya"></div>
+        <p class="intro">Portal privado de la licitación del proyecto Marina 5, en Punta Cana Resort. Solo para las empresas invitadas y el equipo del proyecto.</p>
+        <div class="botones">
+          <a class="boton principal" href="https://script.google.com/macros/s/AKfycbwwgFn-wjBMrB0DXuLZTLmdzsdV-UajJf9FeV68lVUYgk5CXpgWLtanlnhY-sGLmRjd/exec" target="_blank" rel="noopener">Acceder al portal</a>
+          <a class="boton secundario" href="guia/index.html">Guía del portal de licitación</a>
+        </div>
+        <p class="ayuda">El portal se abre en una pestaña nueva.</p>
+      </div>
+    </main>
+
+    <section class="pasos" aria-label="Antes de entrar">
+      <div class="dentro">
+        <ol>
+          <li>
+            <span class="num">1</span>
+            <h2>Lee la guía</h2>
+            <p>En cinco minutos verás cómo funciona cada parte: documentos, RFI, adendas, ofertas y contrato. <a href="guia/index.html">Abrir la guía</a></p>
+          </li>
+          <li>
+            <span class="num">2</span>
+            <h2>Entra con tu correo</h2>
+            <p>Sin contraseña: escribe el correo con el que te invitaron y recibirás un enlace personal. Si no llega, mira en la carpeta de spam.</p>
+          </li>
+          <li>
+            <span class="num">3</span>
+            <h2>Acepta la confidencialidad</h2>
+            <p>Solo la primera vez. Después, el botón “Guía” del portal abre la guía de tu rol.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <footer>
+      <div class="dentro">
+        <span>© Sunspot Paradise Inc. · Proyecto Marina 5</span>
+        <span>¿Dudas? <a href="mailto:info@sunspotparadise.com">info@sunspotparadise.com</a></span>
+      </div>
+    </footer>
+  </body>
+</html>

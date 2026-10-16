@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guía del portal de licitación Marina 5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap">
+    <!--
+      Guía pública del portal de licitación Marina 5. Generada desde src/client/tutorial.html del portal
+      (repositorio licitacion): para cambiarla, se cambia allí y se vuelve a generar.
+    -->
+    <style>
+      :root {
+        --azul: #1F3A5F;
+        --azul-claro: #9DB8DA;
+        --naranja: #D9822B;
+        --naranja-texto: #A85E17;
+        --naranja-fondo: #FDF4EA;
+        --fondo: #FBFBFA;
+        --fondo-2: #EEF2F7;
+        --tinta: #1F2A37;
+        --texto: #3D4A5C;
+        --suave: #5F6B7C;
+        --borde: #D9DFE7;
+        --blanco: #FFFFFF;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--fondo);
+        color: var(--tinta);
+        font-family: 'Roboto Condensed', Arial, sans-serif;
+        font-size: 18px;
+        line-height: 1.45;
+      }
+      a { color: inherit; }
+      .barra {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--azul);
+        color: #F4F6F9;
+        box-shadow: 0 2px 10px rgba(16, 32, 56, 0.18);
+      }
+      .barra-dentro {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .marca { display: flex; align-items: center; gap: 12px; margin-right: auto; text-decoration: none; }
+      .marca img { height: 34px; width: auto; }
+      .marca-texto { font-weight: 700; font-size: 18px; letter-spacing: 0.5px; }
+      .marca-texto small { display: block; font-weight: 400; font-size: 14px; color: var(--azul-claro); letter-spacing: 0; }
+      .etiqueta-pruebas { background: #FFE6A8; color: #5C4300; font-weight: 700; font-size: 13px; padding: 3px 10px; border-radius: 12px; }
+      .navegar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+      .boton {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        min-height: 40px;
+        padding: 8px 14px;
+        border-radius: 8px;
+        border: 1px solid rgba(244, 246, 249, 0.45);
+        background: transparent;
+        color: #F4F6F9;
+        font: 500 16px 'Roboto Condensed', Arial, sans-serif;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .boton:hover, .boton:focus-visible { background: rgba(244, 246, 249, 0.12); }
+      .boton:focus-visible, select:focus-visible, .indice a:focus-visible { outline: 3px solid var(--naranja); outline-offset: 2px; }
+      .boton-portal { background: var(--naranja); border-color: var(--naranja); color: #1B1205; font-weight: 700; }
+      .boton-portal:hover, .boton-portal:focus-visible { background: #E89548; }
+      .barra select {
+        min-height: 40px;
+        max-width: 230px;
+        padding: 6px 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(244, 246, 249, 0.45);
+        background: #2A4A73;
+        color: #F4F6F9;
+        font: 500 16px 'Roboto Condensed', Arial, sans-serif;
+      }
+      main { max-width: 1180px; margin: 0 auto; padding: 0 20px 40px; }
+      .portada { padding: 56px 0 28px; }
+      .eyebrow { margin: 0 0 10px; font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--suave); }
+      h1 { margin: 0 0 14px; font-size: 46px; line-height: 1.1; color: var(--azul); }
+      .portada p.intro { margin: 0; max-width: 780px; font-size: 20px; color: var(--texto); }
+      .indice { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+      .indice a {
+        display: block;
+        height: 100%;
+        padding: 14px 16px;
+        background: var(--blanco);
+        border: 1px solid var(--borde);
+        border-radius: 10px;
+        text-decoration: none;
+      }
+      .indice a:hover { border-color: var(--azul); }
+      .indice b { display: block; color: var(--azul); font-size: 18px; }
+      .indice span { color: var(--suave); font-size: 15px; }
+      section.bloque { padding: 44px 0 8px; border-top: 1px solid var(--borde); scroll-margin-top: 72px; }
+      section.bloque h2 { margin: 0 0 22px; font-size: 32px; line-height: 1.15; color: var(--azul); max-width: 960px; }
+      .pasos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--n, 5), minmax(0, 1fr)); gap: 30px; }
+      .paso {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 20px 18px;
+        background: var(--blanco);
+        border: 2px solid var(--borde);
+        border-radius: 12px;
+      }
+      .paso:not(:last-child)::after {
+        content: '›';
+        position: absolute;
+        right: -24px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 30px;
+        color: #8E99A9;
+      }
+      .paso-cabeza { display: flex; align-items: center; gap: 10px; }
+      .num {
+        flex: none;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--azul);
+        color: #F4F6F9;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .rol { margin: 0; font-weight: 700; font-size: 20px; color: var(--tinta); }
+      .verbo { margin: 6px 0 0; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--suave); }
+      .plazo { margin: 0; font-size: 34px; font-weight: 700; line-height: 1.1; color: var(--azul); }
+      .desc { margin: 0; font-size: 16px; color: var(--texto); }
+      .paso.clave { background: var(--naranja-fondo); border-color: var(--naranja); }
+      .paso.clave .num { background: var(--naranja); color: #1B1205; }
+      .paso.clave .verbo, .paso.clave .plazo { color: var(--naranja-texto); }
+      .paso.opcional { background: var(--fondo-2); border-style: dashed; border-color: #9AA5B5; }
+      .paso.opcional .num { background: #6B7686; }
+      .linea { margin: 22px 0 0; font-size: 17px; color: var(--texto); }
+      .linea b { color: var(--tinta); letter-spacing: 1px; margin-right: 8px; }
+      .regla {
+        margin: 16px 0 0;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+        background: var(--azul);
+        color: #F4F6F9;
+        border-radius: 10px;
+        padding: 16px 22px;
+      }
+      .regla-tipo { font-size: 14px; font-weight: 700; letter-spacing: 2px; color: var(--azul-claro); }
+      .regla-texto { flex: 1; min-width: 240px; margin: 0; font-size: 19px; font-weight: 700; }
+      .regla-cifra { margin: 0; font-size: 32px; font-weight: 700; white-space: nowrap; }
+      .pie { margin: 12px 0 0; font-size: 15px; color: var(--suave); }
+      .roles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+      .roles li { padding: 18px 18px; background: var(--blanco); border: 2px solid var(--borde); border-radius: 12px; }
+      .roles li.clave { background: var(--naranja-fondo); border-color: var(--naranja); }
+      .roles .codigo { margin: 0; font-size: 14px; font-weight: 700; letter-spacing: 2px; color: var(--suave); }
+      .roles h3 { margin: 4px 0 6px; font-size: 22px; color: var(--tinta); }
+      .roles p.desc { font-size: 16px; }
+      table.plazos { width: 100%; border-collapse: collapse; background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; overflow: hidden; font-size: 17px; }
+      table.plazos th, table.plazos td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--borde); }
+      table.plazos th { background: var(--fondo-2); color: var(--tinta); }
+      table.plazos td:last-child, table.plazos th:last-child { text-align: right; white-space: nowrap; }
+      .avisos { margin-top: 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+      .avisos div { padding: 16px 18px; background: var(--blanco); border: 2px solid var(--borde); border-radius: 12px; }
+      .avisos div.clave { background: var(--naranja-fondo); border-color: var(--naranja); }
+      .avisos h3 { margin: 0 0 4px; font-size: 20px; }
+      .avisos p { margin: 0; font-size: 16px; color: var(--texto); }
+      .nav-bloque { display: flex; gap: 10px; flex-wrap: wrap; margin: 22px 0 0; }
+      .nav-bloque .boton { color: var(--azul); border-color: var(--borde); background: var(--blanco); }
+      .nav-bloque .boton:hover { border-color: var(--azul); }
+      .nav-bloque .boton-portal { color: #1B1205; background: var(--naranja); border-color: var(--naranja); }
+      .final { margin: 40px 0 0; padding: 26px; background: var(--azul); color: #F4F6F9; border-radius: 12px; display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+      .final p { margin: 0; flex: 1; min-width: 240px; font-size: 19px; }
+      footer { max-width: 1180px; margin: 0 auto; padding: 18px 20px 30px; color: var(--suave); font-size: 14px; }
+      @media (max-width: 900px) {
+        .roles, .avisos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+      @media (max-width: 760px) {
+        body { font-size: 17px; }
+        h1 { font-size: 34px; }
+        section.bloque h2 { font-size: 25px; }
+        .pasos { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+        .paso:not(:last-child)::after { right: auto; left: 50%; top: auto; bottom: -27px; transform: translateX(-50%) rotate(90deg); }
+        .roles, .avisos { grid-template-columns: minmax(0, 1fr); }
+        .barra-dentro { flex-wrap: nowrap; gap: 8px; padding: 8px 12px; }
+        .marca-texto, .etiqueta-pruebas, .barra select, .largo { display: none; }
+        .boton { min-height: 38px; padding: 6px 12px; }
+        section.bloque { scroll-margin-top: 60px; }
+      }
+    </style>
+    <link rel="icon" type="image/png" href="../assets/logo-negro.png">
+    <meta name="description" content="Guía del portal de licitación Marina 5 de Sunspot Paradise Inc.: quién hace cada paso, en qué orden y en cuánto tiempo.">
+  </head>
+  <body>
+    <header class="barra">
+      <div class="barra-dentro">
+        <a class="marca" href="../index.html" >
+          <img id="logo" src="../assets/logo-blanco.png" alt="Sunspot Paradise">
+          <span class="marca-texto">Guía del portal<small>Licitación Marina 5</small></span>
+        </a>
+        
+        <nav class="navegar" aria-label="Navegación de la guía">
+          <a class="boton" href="../index.html" >Inicio</a>
+          <button type="button" class="boton" id="anterior" aria-label="Sección anterior">← <span class="largo">Anterior</span></button>
+          <label for="saltar" style="position:absolute;left:-9999px">Ir a la sección</label>
+          <select id="saltar"></select>
+          <button type="button" class="boton" id="siguiente" aria-label="Sección siguiente"><span class="largo">Siguiente</span> →</button>
+          <a class="boton boton-portal" href="https://script.google.com/macros/s/AKfycbwwgFn-wjBMrB0DXuLZTLmdzsdV-UajJf9FeV68lVUYgk5CXpgWLtanlnhY-sGLmRjd/exec" target="_blank" rel="noopener">Acceder <span class="largo">al portal</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="portada" id="inicio" data-titulo="Índice">
+        <p class="eyebrow">Proyecto Marina 5 · Portal de licitación</p>
+        <h1>Cómo funciona el portal de licitación</h1>
+        <p class="intro">Una guía corta de cada función: quién hace cada paso, en qué orden y en cuánto tiempo. Todo queda registrado en el portal con fecha y hora, y ninguna empresa ve lo que preguntó u ofertó otra.</p>
+        <ul class="indice">
+          <li><a href="#quien"><b>Quién participa</b><span>Los roles del portal</span></a></li>
+          <li><a href="#acceso"><b>Acceso</b><span>Entrar sin contraseña</span></a></li>
+          <li><a href="#rfi"><b>RFI técnica</b><span>Preguntas sobre el proyecto</span></a></li>
+          <li><a href="#comercial"><b>Consulta comercial</b><span>Contrato, pagos y plazos</span></a></li>
+          <li><a href="#valor"><b>Ingeniería de valor</b><span>Propuestas de ahorro</span></a></li>
+          <li><a href="#adendas"><b>Adendas</b><span>Cambios a los documentos</span></a></li>
+          <li><a href="#documentos"><b>Documentos</b><span>Códigos y revisiones</span></a></li>
+          <li><a href="#ofertas"><b>Ofertas</b><span>El sobre cerrado</span></a></li>
+          <li><a href="#legal"><b>Legal</b><span>El borrador del contrato</span></a></li>
+          <li><a href="#plazos"><b>Plazos y avisos</b><span>Resumen</span></a></li>
+        </ul>
+      </section>
+
+      <section class="bloque" id="quien" data-titulo="Quién participa">
+        <p class="eyebrow">Quién participa</p>
+        <h2>Seis roles: el portal muestra a cada persona solo lo que le toca hacer y ver.</h2>
+        <ul class="roles">
+          <li><p class="codigo">PROP</p><h3>Propiedad</h3><p class="desc">Sunspot Paradise Inc. Sigue el proceso en solo lectura.</p></li>
+          <li><p class="codigo">PM</p><h3>Project manager</h3><p class="desc">Coordina: invita a los usuarios, publica las respuestas, emite las adendas y aprueba las ofertas.</p></li>
+          <li class="clave"><p class="codigo">SUPV</p><h3>Supervisor</h3><p class="desc">Punto de contacto de los licitantes. Filtra cada consulta, revisa respuestas y adendas, y verifica las ofertas.</p></li>
+          <li><p class="codigo">PROY</p><h3>Proyectista</h3><p class="desc">El equipo de diseño. Responde las RFI técnicas, evalúa las propuestas de valor y prepara las adendas.</p></li>
+          <li><p class="codigo">LEGAL</p><h3>Asesoría legal</h3><p class="desc">Revisa con cada empresa su borrador de contrato.</p></li>
+          <li><p class="codigo">GC</p><h3>Licitantes</h3><p class="desc">Las empresas invitadas: consultan los documentos, envían sus consultas y propuestas, y cargan su oferta.</p></li>
+        </ul>
+        <div class="regla"><span class="regla-tipo">REGLA</span><p class="regla-texto">Todos aceptan un compromiso de confidencialidad la primera vez que entran.</p></div>
+        <div class="nav-bloque" data-nav></div>
+      </section>
+
+      <section class="bloque" id="acceso" data-titulo="Acceso">
+        <p class="eyebrow">Acceso</p>
+        <h2>Sin contraseñas: cada persona entra con un enlace personal que le llega a su correo.</h2>
+        <ol class="pasos" style="--n:5">
+          <li class="paso"><div class="paso-cabeza"><span class="num">1</span><p class="rol">PM</p></div><p class="verbo">Invita</p><p class="plazo">72 h</p><p class="desc">Da de alta a la persona y le envía la invitación con su enlace.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">2</span><p class="rol">Usuario</p></div><p class="verbo">Pide el enlace</p><p class="plazo">—</p><p class="desc">Escribe su correo en la pantalla de acceso del portal.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">3</span><p class="rol">Correo</p></div><p class="verbo">Llega el enlace</p><p class="plazo">30 min</p><p class="desc">De info@sunspotparadise.com. Si no llega, mira en la carpeta de spam.</p></li>
+          <li class="paso clave"><div class="paso-cabeza"><span class="num">4</span><p class="rol">Usuario</p></div><p class="verbo">Acepta</p><p class="plazo">1.ª vez</p><p class="desc">El compromiso de confidencialidad, solo la primera vez.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">5</span><p class="rol">Portal</p></div><p class="verbo">Abre la sesión</p><p class="plazo">7 días</p><p class="desc">En cada dispositivo. El botón Guía abre la guía de tu rol.</p></li>
+        </ol>
+        <p class="linea"><b>LÍMITES</b>Como máximo 5 enlaces por hora y correo. Mientras no venza, el enlace se abre en el celular y en la computadora.</p>
+        <div class="regla"><span class="regla-tipo">REGLA</span><p class="regla-texto">El enlace es personal: todo lo que se hace con él queda registrado a nombre de su dueño.</p></div>
+        <p class="pie">Arriba del portal puede salir el aviso de Google “Un usuario de Google Apps Script creó esta aplicación”: es normal y se cierra con la X.</p>
+        <div class="nav-bloque" data-nav></div>
+      </section>
+
+      <section class="bloque" id="rfi" data-titulo="RFI técnica">
+        <p class="eyebrow">RFI técnica</p>
+        <h2>Cada RFI pasa por supervisor, proyectista y PM, y llega a todos los licitantes sin el nombre de quien preguntó.</h2>
+        <ol class="pasos" style="--n:5">
+          <li class="paso"><div class="paso-cabeza"><span class="num">1</span><p class="rol">Licitante</p></div><p class="verbo">Envía</p><p class="plazo">—</p><p class="desc">Pregunta citando el documento y su revisión vigente.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">2</span><p class="rol">Supervisor</p></div><p class="verbo">Filtra</p><p class="plazo">1 día</p><p class="desc">La deriva al proyectista, la une a otra igual o la rechaza con motivo.</p></li>
+          <li class="paso clave"><div class="paso-cabeza"><span class="num">3</span><p class="rol">Proyectista</p></div><p class="verbo">Responde</p><p class="plazo">3 días</p><p class="desc">Redacta la respuesta técnica sin saber qué empresa preguntó.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">4</span><p class="rol">Supervisor</p></div><p class="verbo">Aprueba</p><p class="plazo">1 día</p><p class="desc">Revisa la respuesta antes de que llegue al PM.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">5</span><p class="rol">PM</p></div><p class="verbo">Publica</p><p class="plazo">1 día</p><p class="desc">La respuesta llega por correo a todos los licitantes, igual para todos.</p></li>
+        </ol>
+        <p class="linea"><b>DEVOLUCIONES</b>Supervisor → Proyectista · PM → Supervisor, siempre con una nota.</p>
+        <div class="regla"><span class="regla-tipo">COMPROMISO</span><p class="regla-texto">Respuesta publicada, anónima e igual para todos los licitantes.</p><p class="regla-cifra">6 días</p></div>
+        <p class="pie">Días laborables: de lunes a viernes, sin feriados. Para no revelar quién pregunta, no escribas el nombre de tu empresa en la RFI ni en sus archivos.</p>
+        <div class="nav-bloque" data-nav></div>
+      </section>
+
+      <section class="bloque" id="comercial" data-titulo="Consulta comercial">
+        <p class="eyebrow">Consulta general</p>
+        <h2>Las consultas comerciales o contractuales no pasan por el proyectista: las responde y publica el PM.</h2>
+        <ol class="pasos" style="--n:4">
+          <li class="paso"><div class="paso-cabeza"><span class="num">1</span><p class="rol">Licitante</p></div><p class="verbo">Envía</p><p class="plazo">—</p><p class="desc">Consulta comercial o contractual: pagos, fianzas, plazos, contrato.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">2</span><p class="rol">Supervisor</p></div><p class="verbo">Filtra</p><p class="plazo">1 día</p><p class="desc">La deriva al PM, la une a otra igual o la rechaza con motivo.</p></li>
+          <li class="paso clave"><div class="paso-cabeza"><span class="num">3</span><p class="rol">PM</p></div><p class="verbo">Responde y publica</p><p class="plazo">2 días</p><p class="desc">La respuesta llega a todos los licitantes, sin el nombre de quien preguntó.</p></li>
+          <li class="paso opcional"><div class="paso-cabeza"><span class="num">i</span><p class="rol">Consulta técnica</p></div><p class="verbo">Como una RFI</p><p class="plazo">—</p><p class="desc">Una consulta general técnica sigue el recorrido de la RFI, con sus plazos.</p></li>
+        </ol>
+        <p class="linea"><b>DEVOLUCIONES</b>PM → Supervisor, con una nota.</p>
+        <div class="regla"><span class="regla-tipo">COMPROMISO</span><p class="regla-texto">Respuesta comercial publicada para todos.</p><p class="regla-cifra">3 días</p></div>
+        <p class="pie">Al enviar se elige el tipo: RFI, consulta general (técnica o comercial) o propuesta de ingeniería de valor.</p>
+        <div class="nav-bloque" data-nav></div>
+      </section>
+
+      <section class="bloque" id="valor" data-titulo="Ingeniería de valor">
+        <p class="eyebrow">Ingeniería de valor</p>
+        <h2>Una propuesta de valor es confidencial: solo la empresa que la propone recibe la decisión.</h2>
+        <ol class="pasos" style="--n:5">
+          <li class="paso"><div class="paso-cabeza"><span class="num">1</span><p class="rol">Licitante</p></div><p class="verbo">Propone</p><p class="plazo">—</p><p class="desc">Un cambio con su ahorro en costo o plazo, respetando el diseño.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">2</span><p class="rol">Supervisor</p></div><p class="verbo">Filtra</p><p class="plazo">1 día</p><p class="desc">La deriva al proyectista o la rechaza con motivo.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">3</span><p class="rol">Proyectista</p></div><p class="verbo">Evalúa</p><p class="plazo">3 días</p><p class="desc">Puede pedir aclaraciones: la empresa tiene 2 días para responder.</p></li>
+          <li class="paso clave"><div class="paso-cabeza"><span class="num">4</span><p class="rol">PM</p></div><p class="verbo">Decide</p><p class="plazo">2 días</p><p class="desc">La decisión llega solo a la empresa que propuso.</p></li>
+          <li class="paso opcional"><div class="paso-cabeza"><span class="num">5</span><p class="rol">PM</p></div><p class="verbo">Publica (opcional)</p><p class="plazo">—</p><p class="desc">Si conviene a todos, la publica sin el nombre de la empresa.</p></li>
+        </ol>
+        <p class="linea"><b>ACLARACIONES</b>Proyectista ↔ Licitante, solo con la empresa que propone.</p>
+        <div class="regla"><span class="regla-tipo">REGLA</span><p class="regla-texto">Ninguna otra empresa ve la propuesta. Si se publica, va sin el nombre de quien la propuso.</p></div>
+        <p class="pie">El techo nuevo es un componente clave: se agradecen propuestas de eficiencia, costo, plazo, constructibilidad o durabilidad.</p>
+        <div class="nav-bloque" data-nav></div>
+      </section>
+
+      <section class="bloque" id="adendas" data-titulo="Adendas">
+        <p class="eyebrow">Adendas</p>
+        <h2>El proyectista prepara la adenda, el supervisor la revisa y el PM la emite; cada revisión explica su alcance.</h2>
+        <ol class="pasos" style="--n:4">
+          <li class="paso"><div class="paso-cabeza"><span class="num">1</span><p class="rol">Proyectista</p></div><p class="verbo">Prepara</p><p class="plazo">—</p><p class="desc">El texto, las revisiones de documentos con su alcance y los documentos nuevos.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">2</span><p class="rol">Supervisor</p></div><p class="verbo">Revisa</p><p class="plazo">—</p><p class="desc">Comprueba el texto, los archivos y los alcances. La pasa al PM o la devuelve.</p></li>
+          <li class="paso clave"><div class="paso-cabeza"><span class="num">3</span><p class="rol">PM</p></div><p class="verbo">Emite</p><p class="plazo">—</p><p class="desc">ADENDA-01, 02…: las revisiones nuevas quedan vigentes y llega un correo a todos.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">4</span><p class="rol">Licitante</p></div><p class="verbo">Confirma</p><p class="plazo">2 días</p><p class="desc">Basta una persona por empresa. Si nadie confirma, el portal lo recuerda una vez.</p></li>
+        </ol>
+        <p class="linea"><b>ALCANCE</b>Cada revisión dice qué cambió, en qué láminas o zonas y por qué. Se lee en la adenda, en el correo y en Documentos.</p>
+        <div class="regla"><span class="regla-tipo">REGLA</span><p class="regla-texto">Antes de emitirse, ningún licitante ve la adenda. Emitida, la reciben todos a la vez.</p></div>
+        <div class="nav-bloque" data-nav></div>
+      </section>
+
+      <section class="bloque" id="documentos" data-titulo="Documentos">
+        <p class="eyebrow">Documentos</p>
+        <h2>Cada documento tiene un código fijo; sus revisiones suben de R0 a R1, R2… y la anterior queda como sustituida.</h2>
+        <ol class="pasos" style="--n:4">
+          <li class="paso"><div class="paso-cabeza"><span class="num">1</span><p class="rol">PM</p></div><p class="verbo">Agrega</p><p class="plazo">—</p><p class="desc">Cada documento recibe su código, por ejemplo M5-ARQ-PL-051.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">2</span><p class="rol">Portal</p></div><p class="verbo">Avisa</p><p class="plazo">Al momento</p><p class="desc">Correo a los licitantes con un enlace directo a cada documento nuevo.</p></li>
+          <li class="paso clave"><div class="paso-cabeza"><span class="num">3</span><p class="rol">Licitante</p></div><p class="verbo">Consulta</p><p class="plazo">—</p><p class="desc">Ver, Descargar y Revisiones, con el alcance de cada cambio.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">4</span><p class="rol">Licitante</p></div><p class="verbo">Baja el índice</p><p class="plazo">Excel</p><p class="desc">El índice de los documentos vigentes, para su control.</p></li>
+        </ol>
+        <p class="linea"><b>CAMBIOS</b>Un documento que ven los licitantes solo cambia por adenda: así todas las empresas reciben el mismo aviso.</p>
+        <div class="regla"><span class="regla-tipo">REGLA</span><p class="regla-texto">Una RFI cita siempre la revisión vigente. El portal registra quién vio o descargó cada documento.</p></div>
+        <div class="nav-bloque" data-nav></div>
+      </section>
+
+      <section class="bloque" id="ofertas" data-titulo="Ofertas">
+        <p class="eyebrow">Ofertas</p>
+        <h2>La oferta va en sobre cerrado: nadie del equipo ve su valor ni su PDF hasta la apertura.</h2>
+        <ol class="pasos" style="--n:4">
+          <li class="paso"><div class="paso-cabeza"><span class="num">1</span><p class="rol">Licitante</p></div><p class="verbo">Carga y activa</p><p class="plazo">—</p><p class="desc">Valor, plazo y PDF. Puede desactivarla y cargar otra antes de la apertura.</p></li>
+          <li class="paso clave"><div class="paso-cabeza"><span class="num">2</span><p class="rol">Portal</p></div><p class="verbo">Abre el sobre</p><p class="plazo">17:00</p><p class="desc">El día de entrega de ofertas.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">3</span><p class="rol">Supervisor</p></div><p class="verbo">Verifica</p><p class="plazo">2 días</p><p class="desc">La pasa al PM, la devuelve para corregir o la rechaza.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">4</span><p class="rol">PM</p></div><p class="verbo">Aprueba</p><p class="plazo">—</p><p class="desc">La aprobación final.</p></li>
+        </ol>
+        <p class="linea"><b>DEVOLUCIONES</b>Supervisor → Licitante, para corregir la oferta.</p>
+        <div class="regla"><span class="regla-tipo">REGLA</span><p class="regla-texto">Antes de la apertura, el equipo solo sabe que una empresa tiene una oferta activa. Ninguna empresa ve la de otra.</p></div>
+        <div class="nav-bloque" data-nav></div>
+      </section>
+
+      <section class="bloque" id="legal" data-titulo="Legal">
+        <p class="eyebrow">Legal</p>
+        <h2>Cada empresa revisa el borrador del contrato en su propia copia, en modo sugerencias.</h2>
+        <ol class="pasos" style="--n:5">
+          <li class="paso"><div class="paso-cabeza"><span class="num">1</span><p class="rol">PM</p></div><p class="verbo">Carga el borrador</p><p class="plazo">—</p><p class="desc">Contrato de obra, fianzas y garantías.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">2</span><p class="rol">Licitante</p></div><p class="verbo">Activa su copia</p><p class="plazo">—</p><p class="desc">Una carpeta por empresa. Nadie más la ve.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">3</span><p class="rol">Licitante</p></div><p class="verbo">Sugiere</p><p class="plazo">—</p><p class="desc">Comenta y propone cambios en el documento.</p></li>
+          <li class="paso clave"><div class="paso-cabeza"><span class="num">4</span><p class="rol">Legal</p></div><p class="verbo">Negocia</p><p class="plazo">—</p><p class="desc">Acepta o rechaza cada sugerencia en el propio documento.</p></li>
+          <li class="paso"><div class="paso-cabeza"><span class="num">5</span><p class="rol">Legal o PM</p></div><p class="verbo">Cierra</p><p class="plazo">—</p><p class="desc">Guarda el PDF de lo negociado. Se puede reabrir.</p></li>
+        </ol>
+        <p class="linea"><b>VERSIÓN NUEVA</b>Si cambia el borrador, cada empresa recibe la versión nueva; la anterior se conserva.</p>
+        <div class="regla"><span class="regla-tipo">REGLA</span><p class="regla-texto">Para abrir los documentos legales hace falta una cuenta Google.</p></div>
+        <div class="nav-bloque" data-nav></div>
+      </section>
+
+      <section class="bloque" id="plazos" data-titulo="Plazos y avisos">
+        <p class="eyebrow">Plazos y avisos</p>
+        <h2>Cada paso tiene su responsable y su plazo, y el portal avisa antes de que venza.</h2>
+        <table class="plazos">
+          <thead><tr><th scope="col">Paso</th><th scope="col">Quién</th><th scope="col">Plazo</th></tr></thead>
+          <tbody>
+            <tr><td>Filtrar una RFI o una consulta</td><td>Supervisor</td><td>1 día</td></tr>
+            <tr><td>Responder una RFI técnica</td><td>Proyectista</td><td>3 días</td></tr>
+            <tr><td>Aprobar la respuesta</td><td>Supervisor</td><td>1 día</td></tr>
+            <tr><td>Publicar la respuesta</td><td>PM</td><td>1 día</td></tr>
+            <tr><td>Responder una consulta comercial</td><td>PM</td><td>2 días</td></tr>
+            <tr><td>Aclarar una propuesta de valor</td><td>Licitante</td><td>2 días</td></tr>
+            <tr><td>Decidir una propuesta de valor</td><td>PM</td><td>2 días</td></tr>
+            <tr><td>Verificar una oferta, desde la apertura</td><td>Supervisor</td><td>2 días</td></tr>
+            <tr><td>Confirmar una adenda (recordatorio)</td><td>Licitante</td><td>2 días</td></tr>
+          </tbody>
+        </table>
+        <div class="avisos">
+          <div><h3>Semáforo</h3><p>Cada paso abierto dice si está en plazo, vence hoy o está vencido.</p></div>
+          <div class="clave"><h3>Recordatorios</h3><p>Un día antes de vencer, a quien le toca el paso.</p></div>
+          <div><h3>Novedades</h3><p>Respuestas, adendas y documentos nuevos llegan por correo y a Inicio.</p></div>
+        </div>
+        <p class="pie">Días laborables: de lunes a viernes, sin los feriados de la República Dominicana.</p>
+        <div class="nav-bloque" data-nav></div>
+      </section>
+
+      <div class="final">
+        <p>¿Listo para entrar? Pide tu enlace con el correo con el que te invitaron.</p>
+        <a class="boton boton-portal" href="https://script.google.com/macros/s/AKfycbwwgFn-wjBMrB0DXuLZTLmdzsdV-UajJf9FeV68lVUYgk5CXpgWLtanlnhY-sGLmRjd/exec" target="_blank" rel="noopener">Acceder al portal</a>
+      </div>
+    </main>
+    <footer>Sunspot Paradise Inc. · Portal de licitación Marina 5 · ¿Dudas? info@sunspotparadise.com</footer>
+
+    <script>
+      (function () {
+        var bloques = Array.prototype.slice.call(document.querySelectorAll('main > section'));
+        var saltar = document.getElementById('saltar');
+        bloques.forEach(function (bloque, i) {
+          var opcion = document.createElement('option');
+          opcion.value = String(i);
+          opcion.textContent = bloque.getAttribute('data-titulo') || bloque.id;
+          saltar.appendChild(opcion);
+        });
+
+        function actual() {
+          var mejor = 0;
+          for (var i = 0; i < bloques.length; i++) {
+            if (bloques[i].getBoundingClientRect().top <= 110) mejor = i;
+          }
+          return mejor;
+        }
+
+        function ir(i) {
+          var destino = bloques[Math.max(0, Math.min(bloques.length - 1, i))];
+          if (destino) destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function marcar() {
+          var i = actual();
+          saltar.value = String(i);
+          document.getElementById('anterior').disabled = i === 0;
+          document.getElementById('siguiente').disabled = i === bloques.length - 1;
+        }
+
+        document.getElementById('anterior').addEventListener('click', function () { ir(actual() - 1); });
+        document.getElementById('siguiente').addEventListener('click', function () { ir(actual() + 1); });
+        saltar.addEventListener('change', function () { ir(Number(saltar.value)); });
+        window.addEventListener('scroll', marcar, { passive: true });
+
+        // Al pie de cada sección: anterior, índice, siguiente y el portal.
+        var portal = document.querySelector('.barra .boton-portal');
+        document.querySelectorAll('[data-nav]').forEach(function (fila) {
+          var i = bloques.indexOf(fila.closest('section'));
+          function boton(texto, alPulsar) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'boton';
+            b.textContent = texto;
+            b.addEventListener('click', alPulsar);
+            return b;
+          }
+          if (i > 0) fila.appendChild(boton('← ' + (bloques[i - 1].getAttribute('data-titulo') || 'Anterior'), function () { ir(i - 1); }));
+          fila.appendChild(boton('Índice', function () { ir(0); }));
+          if (i < bloques.length - 1) fila.appendChild(boton((bloques[i + 1].getAttribute('data-titulo') || 'Siguiente') + ' →', function () { ir(i + 1); }));
+          if (portal) {
+            var enlace = portal.cloneNode(true);
+            fila.appendChild(enlace);
+          }
+        });
+        marcar();
+      })();
+    </script>
+  </body>
+</html>
