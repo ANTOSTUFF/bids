@@ -22,7 +22,7 @@
         --borde: #D9DFE7;
       }
       * { box-sizing: border-box; }
-      html, body { height: 100%; }
+      html { scroll-behavior: smooth; }
       body {
         margin: 0;
         display: flex;
@@ -34,30 +34,33 @@
         line-height: 1.45;
       }
       .portada {
-        flex: 1;
+        position: relative;
+        min-height: 100vh;
+        min-height: 100svh;
         background: linear-gradient(160deg, var(--azul) 0%, var(--azul-hondo) 100%);
         color: #F4F6F9;
         display: flex;
         align-items: center;
       }
       .dentro { width: 100%; max-width: 1080px; margin: 0 auto; padding: 56px 24px; }
+      .portada .dentro { max-width: min(1320px, 88vw); padding: clamp(56px, 7vh, 96px) 24px clamp(96px, 12vh, 140px); }
       .logo { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
-      .logo img { height: 56px; width: auto; }
-      .logo span { font-size: 15px; font-weight: 700; letter-spacing: 3px; color: var(--azul-claro); }
-      .eyebrow { margin: 0 0 12px; font-size: 16px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--azul-claro); }
-      h1 { margin: 0; font-size: 72px; line-height: 1.02; font-weight: 700; }
-      .raya { width: 120px; height: 5px; background: var(--naranja); margin: 28px 0; border-radius: 3px; }
-      .intro { margin: 0; max-width: 640px; font-size: 21px; color: #C9D6E6; }
+      .logo img { height: clamp(56px, 4.2vw, 80px); width: auto; }
+      .logo span { font-size: clamp(15px, 1.1vw, 20px); font-weight: 700; letter-spacing: 3px; color: var(--azul-claro); }
+      .eyebrow { margin: 0 0 12px; font-size: clamp(16px, 1.15vw, 22px); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--azul-claro); }
+      h1 { margin: 0; font-size: clamp(72px, 7.2vw, 136px); line-height: 1.02; font-weight: 700; }
+      .raya { width: clamp(120px, 9vw, 170px); height: clamp(5px, 0.4vw, 7px); background: var(--naranja); margin: 28px 0; border-radius: 3px; }
+      .intro { margin: 0; max-width: 40em; font-size: clamp(21px, 1.6vw, 30px); color: #C9D6E6; }
       .botones { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 40px; }
       .boton {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
-        min-height: 60px;
-        padding: 14px 28px;
+        min-height: clamp(60px, 4.4vw, 82px);
+        padding: 14px clamp(28px, 2.2vw, 44px);
         border-radius: 10px;
-        font-size: 20px;
+        font-size: clamp(20px, 1.45vw, 27px);
         font-weight: 700;
         text-decoration: none;
       }
@@ -66,7 +69,22 @@
       .principal:hover { background: #E89548; }
       .secundario { border: 2px solid rgba(244, 246, 249, 0.6); color: #F4F6F9; }
       .secundario:hover { background: rgba(244, 246, 249, 0.1); }
-      .ayuda { margin: 14px 0 0; font-size: 16px; color: var(--azul-claro); }
+      .ayuda { margin: 14px 0 0; font-size: clamp(16px, 1.05vw, 19px); color: var(--azul-claro); }
+      .bajar {
+        position: absolute;
+        left: 50%;
+        bottom: 24px;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        color: var(--azul-claro);
+        font-size: 15px;
+        text-decoration: none;
+      }
+      .bajar span { font-size: 26px; line-height: 1; }
+      .bajar:hover { color: #F4F6F9; }
       .pasos { background: var(--fondo); }
       .pasos ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
       .pasos li { background: #FFFFFF; border: 1px solid var(--borde); border-radius: 12px; padding: 22px; }
@@ -80,6 +98,7 @@
       @media (max-width: 760px) {
         .dentro { padding: 40px 20px; }
         .logo { margin-bottom: 36px; }
+        .portada .dentro { max-width: none; padding: 40px 20px 96px; }
         h1 { font-size: 46px; }
         .intro { font-size: 19px; }
         .boton { width: 100%; }
@@ -104,9 +123,10 @@
         </div>
         <p class="ayuda">El portal se abre en una pestaña nueva.</p>
       </div>
+      <a class="bajar" href="#pasos">Antes de entrar<span aria-hidden="true">⌄</span></a>
     </main>
 
-    <section class="pasos" aria-label="Antes de entrar">
+    <section class="pasos" id="pasos" aria-label="Antes de entrar">
       <div class="dentro">
         <ol>
           <li>
